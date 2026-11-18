@@ -36,8 +36,31 @@
     .hero-scroll{position:absolute;right:max(24px,calc((100% - var(--max))/2));bottom:30px;z-index:2;display:grid;place-items:center;width:50px;height:50px;border:1px solid #ffffff80;border-radius:50%;color:#fff;background:#08080855;transition:background .2s}
     .hero-scroll:hover,.hero-scroll:focus-visible{background:#080808}
     .hero-scroll:before{content:"";width:10px;height:10px;border-right:2px solid;border-bottom:2px solid;transform:translateY(-2px) rotate(45deg)}
-    @media(max-width:600px){.hero{align-items:flex-end}.hero-photo{object-position:54% 30%}.hero:after{background:linear-gradient(0deg,rgba(5,8,12,.96) 5%,rgba(5,8,12,.73) 47%,rgba(5,8,12,.04) 78%,rgba(5,8,12,.30))}.hero-content{padding:155px 0 102px}.hero-content h1{font-size:clamp(2.6rem,9.2vw,3.8rem)}.hero-scroll{right:14px;bottom:22px;width:44px;height:44px}}
+    @media(max-width:600px){
+      html{scrollbar-width:thin;scrollbar-color:#5d5147 #111}
+      header{position:sticky;top:0}
+      header:not(.scrolled){background:#080808}
+      nav{height:66px;gap:12px}
+      .logo{width:122px;height:49px}
+      .navlinks{top:66px}
+      .menu{min-height:44px}
+      .hero{display:block;min-height:0;padding:0;background:#101011}
+      .hero picture{position:relative;display:block;height:clamp(190px,58vw,285px)}
+      .hero-photo{object-position:65% 46%}
+      .hero:after,.hero-scroll{display:none}
+      .hero-content{padding:25px 0 30px}
+      .hero-content .eyebrow{gap:9px;letter-spacing:.12em;font-size:.65rem;margin-bottom:12px}
+      .hero-content .eyebrow:before{width:18px}
+      .hero-content h1{font-size:clamp(1.7rem,6.6vw,2.4rem);line-height:1.07;letter-spacing:-.04em;text-transform:none;margin-bottom:12px;text-shadow:none}
+      .hero-copy{font-size:1rem;line-height:1.4;margin-bottom:18px}
+      .hero .actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+      .hero .actions .btn{padding:0 6px;min-height:46px;text-align:center;line-height:1.15;font-size:.7rem;letter-spacing:.03em}
+      .hero-image-credit{left:auto;right:14px;bottom:10px;background:#000a;padding:3px 6px}
+      section:not(.hero):not(.specialty){padding:52px 0}
+      h2{font-size:clamp(1.8rem,8vw,2.6rem)}
+    }
     .hero-image-credit{position:absolute;z-index:2;left:20px;bottom:18px;color:#eee;font-size:.7rem}
+    @media(max-width:600px){section[id]{scroll-margin-top:66px}.hero picture .hero-image-credit{left:auto;right:14px;bottom:10px}}
     section[id]{scroll-margin-top:92px}
     .service-links .card{min-height:185px;gap:18px}
     .service-links .card h3{margin-top:0}
@@ -50,7 +73,7 @@
 <body>
   <header id="header"><nav class="wrap"><a href="#top" aria-label="Metro Shop Fitouts home"><img class="logo" src="metro-logo.png" alt="Metro Shop Fitouts"></a><div class="navlinks" id="navlinks"><a href="#process">Our Process</a><a href="#joinery">Custom Joinery</a><a href="#signage">Signage</a><a href="#services">Services</a><a href="#workshop">Our Workshop</a><a class="btn" href="tel:0468086490">Call 0468 086 490</a></div><button class="menu" id="menu" aria-expanded="false" aria-controls="navlinks">MENU</button></nav></header>
   <main id="top">
-    <section class="hero"><picture><source media="(max-width: 600px)" srcset="metro-warm-barbershop-mobile.webp"><img class="hero-photo" src="metro-warm-barbershop.webp" alt="" fetchpriority="high" width="1672" height="941"></picture><div class="wrap hero-content"><p class="eyebrow">Shop fittings • Melbourne</p><h1>Shop fitouts, custom joinery &amp; signage in Melbourne.</h1><p class="hero-copy">From a single counter or shop sign to a full shop refresh.</p><div class="actions"><a class="btn" href="tel:0468086490">Call 0468 086 490</a><a class="btn ghost" href="sms:+61468086490">Text us a photo</a></div></div><a class="hero-scroll" href="#services" aria-label="Scroll to services"></a><small class="hero-image-credit">Concept image</small></section>
+    <section class="hero"><picture><img class="hero-photo" src="metro-warm-barbershop.webp" alt="" fetchpriority="high" width="1672" height="941"><small class="hero-image-credit">Concept image</small></picture><div class="wrap hero-content"><p class="eyebrow">Shop fittings • Melbourne</p><h1>Shop fitouts, custom joinery &amp; signage in Melbourne.</h1><p class="hero-copy">From a single counter or shop sign to a full shop refresh.</p><div class="actions"><a class="btn" href="tel:0468086490">Call 0468 086 490</a><a class="btn ghost" href="sms:+61468086490">Text us a photo</a></div></div><a class="hero-scroll" href="#services" aria-label="Scroll to services"></a></section>
     <section class="services" id="services">
       <div class="wrap">
         <h2>What can we make for your shop?</h2>
